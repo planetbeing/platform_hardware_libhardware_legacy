@@ -169,6 +169,8 @@ int wifi_load_driver()
     char driver_status[PROPERTY_VALUE_MAX];
     int count = 100; /* wait at most 20 seconds for completion */
 
+    return 0;
+
     if (check_driver_loaded()) {
         return 0;
     }
@@ -201,6 +203,7 @@ int wifi_unload_driver()
 {
     int count = 20; /* wait at most 10 seconds for completion */
 
+    return 0;
     if (rmmod(DRIVER_MODULE_NAME) == 0) {
 	while (count-- > 0) {
 	    if (!check_driver_loaded())
